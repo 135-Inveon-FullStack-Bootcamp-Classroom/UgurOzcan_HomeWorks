@@ -7,14 +7,9 @@ function Album(props) {
     <div className="album py-5 bg-light">
     <div className="container">
         <div className="row">
-            <div className="col-md-12" id="collection-heading">
-                <span>My Album</span>
-            </div>
-        </div>
-        <div className="row">
 
-        {props.posts.map((post) => (
-        <div className="col-md-4">
+        {props.albums.map((post) => (
+        <div className="col-md-4" key={post.id}>
             <div className="card mb-4 box-shadow">
                 <img src={post.thumbnailUrl} className="card-img-top" alt={post.url} />
                 <div className="card-body">
