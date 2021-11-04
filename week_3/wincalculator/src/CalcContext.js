@@ -18,6 +18,7 @@ export const CalcProvider = ({ children }) => {
         setMainText((mainText) => {
           return mainText + label;
         });
+        console.log("mainTextdddd", mainText)
       }
     }
 
@@ -31,7 +32,6 @@ export const CalcProvider = ({ children }) => {
           } else {
             setLastResult(Number(mainText) + lastResult);
           }
-
           break;
         case "-":
           if (!lastResult) {
@@ -41,9 +41,35 @@ export const CalcProvider = ({ children }) => {
           }
           break;
         case "x":
-          break;
+          if (!lastResult) {
+            setLastResult(Number(mainText));
+          } else {
+            setLastResult(lastResult * Number(mainText));
+          }  
+        break;
         case "/":
+          if (!lastResult) {
+            setLastResult(Number(mainText));
+          } else {
+            setLastResult(lastResult / Number(mainText));
+          }
           break;
+        case "=":
+          if (!lastResult) {
+            setLastResult(Number(mainText));
+          } else {
+            setLastResult(lastResult);
+          }
+          break;
+        case "C":
+            if (!lastResult) {
+              setMainText("0");
+              console.log("sdsdsdsdsd if")
+            } else {
+              setMainText("0");
+              console.log("sdsdsdsdsd else")
+            }
+            break;
         default:
           break;
       }
