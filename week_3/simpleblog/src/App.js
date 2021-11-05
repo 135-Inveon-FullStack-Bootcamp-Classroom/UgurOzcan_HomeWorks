@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import Album from './Components/Album';
 import Users from './Components/Users';
+import './App.css'
 
 
 export default function App() {
@@ -41,15 +42,21 @@ export default function App() {
   return (
     <Router>
       <div className="App">
-
-        <Link to="/">Home</Link> 
-
-        <Link to="/about">About</Link>
-
-        <Link to="/users">Users</Link>
-
-        <Link to="/album">Album</Link>
-
+      <nav id="navbar" className="nav">
+        <ul class="nav-list">
+          <li>
+          <Link to="/">Home</Link></li>
+          <li>
+          <Link to="/about">About</Link>
+          </li>
+          <li>
+          <Link to="/users">Users</Link>
+          </li>
+          <li>
+          <Link to="/album">Album</Link>
+          </li>
+        </ul>
+      </nav>	
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
@@ -72,10 +79,14 @@ export default function App() {
 }
 
 function Home() {
-  return <h2>Home</h2>;
+  return <img src = 'https://i.picsum.photos/id/1002/4312/2868.jpg?hmac=5LlLE-NY9oMnmIQp7ms6IfdvSUQOzP_O3DPMWmyNxwo' alt="Italian Trulli" />;
 }
 
 function About() {
-  return <h2>About</h2>;
+  return <div class="header">
+  <h1>About Me</h1>
+  <h2>Uğur Özcan</h2>
+  <p>Software Engineer</p>
+</div>;
 }
 
